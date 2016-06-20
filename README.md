@@ -16,7 +16,7 @@ This will install docker and packer in vagrant box.
 $ vagrant ssh
 ```
 
-### Ansible
+## Ansible
 
 Build docker image with ansible provisioning
 
