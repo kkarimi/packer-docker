@@ -16,14 +16,22 @@
         },
         {
             "type": "ansible-local",
-            "playbook_file": "playbooks/local.yml"
+            "playbook_file": "playbooks/docker.yml"
         }
     ],
     "post-processors": [
+      [
         {
             "type": "docker-import",
             "repository": "macbeth76/packer-ansible",
-            "tag": "0.1"
+            "tag": "latest"
+        },
+        {
+            "type": "docker-push",
+            "login": true,
+            "login_username": "macbeth76",
+            "login_password": "{{user `password`}}"
         }
+      ]
     ]
 }
