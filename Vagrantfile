@@ -18,14 +18,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vbguest.no_remote = false
 
   config.vm.provision :shell, :inline => <<-PREPARE
-
 apt-get -y update
-apt-get install -y wget unzip curl
+apt-get install -y wget unzip
 
-mkdir /home/vagrant/packer
-cd /home/vagrant/packer
+cd /home/ubuntu
 wget https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
-unzip packer_0.12.1_linux_amd64.zip
-echo "export PATH=$PATH:/home/vagrant/packer" > /home/vagrant/.bashrc
+unzip -o packer_0.12.1_linux_amd64.zip -d /usr/local/bin
+rm packer_0.12.1_linux_amd64.zip
 PREPARE
+
 end
