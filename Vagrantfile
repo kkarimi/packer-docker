@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # More info on http://fgrehm.viewdocs.io/vagrant-cachier/usage
     config.cache.scope = :box
   end
-  config.vm.box = "macbeth76/ubuntu-14-04-amd64-virtualbox"
+  config.vm.box = "ubuntu/yakkety64"
 
   # set auto_update to false, if you do NOT want to check the correct
   # additions version when booting this machine
