@@ -27,6 +27,6 @@ $ packer build machine_ansible.json
 Check it.
 
 ```bash
-$ docker run -i -t macbeth76/packer-ansible:0.1 bash
+$ docker run -i -t kkarimi/packer-ansible:0.1 bash
 ```
 
