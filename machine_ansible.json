@@ -1,7 +1,7 @@
 {
     "builders":[{
         "type": "docker",
-        "image": "ubuntu",
+        "image": "ubuntu:16.10",
         "export_path": "image.tar"
     }],
     "provisioners":[
@@ -9,7 +9,7 @@
             "type": "shell",
             "inline": [
                 "apt-get -y update",
-                "apt-get install -y software-properties-common",
+                "apt-get install -y gcc build-essential libssl-dev libffi-dev python-dev python-pip",
                 "pip install ansible"
             ]
         },
@@ -21,7 +21,7 @@
     "post-processors": [
         {
             "type": "docker-import",
-            "repository": "macbeth76/packer-ansible",
+            "repository": "kkarimi/packer-ansible",
             "tag": "0.1"
         }
     ]
